@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Current Author: 
+% John Pridmore 
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+% 
+% John Pridmore's Changes:
+% 0. Added Organizations and Projects Section
+% 1. added enumitem to keep left margin tight for Organization section
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TeX program = xelatex
+
+\documentclass[]{resume-openfont}
+\usepackage[inline]{enumitem}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{##contact_info.first_name##}{##contact_info.last_name##}{
+##contact_info.phone_number## |  \href{##contact_info.contact[0].link##}{##contact_info.contact[0].link##}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.30\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{DePaul University}
+\descript{BS in Computer Science and Japanese}
+\location{June 2018 | Chicago, IL}
+Conc. in Software Development \\
+Dean's List (All Quarters) \\
+\location{ Cum. GPA: 3.85 / 4.0}
+\sectionsep
+
+\subsection{Ritsumeikan University}
+\descript{Study Abroad}
+\location{Aug 2015 - Aug 2016 | Kyoto, JP}
+\sectionsep
+\noindent\rule{\textwidth}{1pt}
+
+\section{Links:}
+\begin{tightemize}
+\vspace{\topsep}
+\item \href{www.jprid.com}{Jprid.com}
+\item \href{##contact_info.contact[1].link##}{##contact_info.contact[1].description##}
+\item \href{##contact_info.contact[2].link##}{##contact_info.contact[2].description##}
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\rule{\textwidth}{1pt}
+\section{Skills:}
+\subsection{Languages}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item C\#
+\item Python 
+\item Groovy
+\item Powershell 
+\item C++ 
+\item Java 
+\item HTML\& CSS 
+\item TypeScript %\& Javascript 
+\item Ruby \\
+\item C \\
+\item Scala
+\end{tightemize}
+\sectionsep
+
+\subsection{Frameworks}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item .NET
+\item Jenkins 
+\item Angular8 
+\item Chef 
+\item Flask 
+\item Django
+\end{tightemize}
+\sectionsep
+
+\subsection{Databases}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item MS SQL Server 
+\item MySQL 
+\item SQLite
+\item NoSQL
+\end{tightemize}
+\sectionsep
+
+\subsection{Cloud Platforms}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item Azure
+\item Google Cloud Platform
+\end{tightemize}
+
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %     AWARDS
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Awards} 
+% \begin{tabular}{rll}
+% 2017		 & 7th/40 & CS361 Optimized C++ Particle Competition \\ 
+% 2013-2018	 & Dean's List  & All Quarters			 \\
+% \end{tabular}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN TWO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+{% for Position in experience limit:2 %}
+\runsubsection{##Position.company##} \\
+\descript{##Position.title##}
+\location{##Position.start## - ##Position.end##}
+{% unless Position.location != '' %}
+\location{##Position.location##}
+{% endunless %}
+
+{% if Position.tags.size > 0 %}
+    {\small
+        \emph{Technologies:}
+        \begin{itemize*}
+    {% for Tech in Position.tags%}
+        \item \emph{##Tech##}
+    {% endfor %}
+    \end{itemize*}
+{% endif %}
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+{% for x in Position.experience_content %}
+    \item ##x##
+{% endfor %}
+\end{tightemize}
+\sectionsep
+{% assign prev_company = Position.company %}
+{% endfor %}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Organizations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\rule{\textwidth}{1pt}
+\section{Organizations}
+{% for Organization in organizations %}
+\runsubsection{##Organization.name##} \\
+\location{##Organization.start_date##-##Organization.end_date## | ##Organization.role##}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+{% for Content in Organization.data%}
+    \item ##Content##
+{% endfor %}
+\end{tightemize}
+\sectionsep
+{% endfor %}
+\end{minipage}
+\end{document} \documentclass[]{article}
