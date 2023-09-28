@@ -41,16 +41,17 @@ Last Updated on \today
 
 % Name command
 \newcommand{\namesection}[3]{
-\centering{
+\flushleft{
 \fontsize{20pt}{30pt}
 \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
 \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
-} \\[5pt]
-\centering{
+}
+%\centering{
 \color{headings}
-\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
+\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3
+%}
 \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
-\vspace{-15pt}
+% \vspace{-15pt}
 }
 
 % Section seperators 

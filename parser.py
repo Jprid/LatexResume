@@ -1,5 +1,7 @@
 import json
 import os
+import subprocess
+
 from liquid import Environment, FileSystemLoader, Mode
 from json import load
 
@@ -25,3 +27,5 @@ if __name__ == '__main__':
     print(render)
     with open('resume-test.tex', 'w') as file:
         file.write(render)
+    print(["xelatex", "-quiet", "resume-test.tex"])
+    subprocess.run(["xelatex", "-quiet", "resume-test.tex"])

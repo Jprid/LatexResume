@@ -1,0 +1,381 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Current Author: 
+% John Pridmore 
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+% 
+% John Pridmore's Changes:
+% 0. Added Organizations and Projects Section
+% 1. added enumitem to keep left margin tight for Organization section
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TeX program = xelatex
+
+\documentclass[]{resume-openfont}
+\usepackage[inline]{enumitem}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{John}{Pridmore}{
+847-471-4073 |  \href{mailto:johnpridmore.lit@gmail.com}{johnpridmore.lit@gmail.com}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.30\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{DePaul University}
+\descript{BS in Computer Science and Japanese}
+\location{June 2018 | Chicago, IL}
+Conc. in Software Development \\
+Dean's List (All Quarters) \\
+\location{ Cum. GPA: 3.85 / 4.0}
+\sectionsep
+
+\subsection{Ritsumeikan University}
+\descript{Study Abroad}
+\location{Aug 2015 - Aug 2016 | Kyoto, JP}
+\sectionsep
+\noindent\rule{\textwidth}{1pt}
+
+\section{Links:}
+\begin{tightemize}
+\vspace{\topsep}
+\item \href{www.jprid.com}{Jprid.com}
+\item \href{https://LinkedIn.com/in/JPrid}{LinkedIn}
+\item \href{https://www.github.com/JPrid}{Github}
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\rule{\textwidth}{1pt}
+\section{Skills:}
+\subsection{Languages}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item C\#
+\item Python 
+\item Groovy
+\item Powershell 
+\item C++ 
+\item Java 
+\item HTML\& CSS 
+\item TypeScript %\& Javascript 
+\end{tightemize}
+\sectionsep
+
+\subsection{Frameworks}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item .NET
+\item Jenkins 
+\item Angular8 & 12
+\item Chef 
+\item Flask \& Django
+\item ArgoCD
+\end{tightemize}
+\sectionsep
+
+\subsection{Databases}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item MS SQL Server \& MySQL \& SQLite \& PostgreSQL
+\item NoSQL
+\end{tightemize}
+\sectionsep
+
+\subsection{Cloud Platforms}
+\begin{tightemize}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\item Azure
+\item Google Cloud Platform
+\end{tightemize}
+
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %     AWARDS
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Awards} 
+% \begin{tabular}{rll}
+% 2017		 & 7th/40 & CS361 Optimized C++ Particle Competition \\ 
+% 2013-2018	 & Dean's List  & All Quarters			 \\
+% \end{tabular}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN TWO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+
+\runsubsection{Galileo Insights LLC} \\
+\descript{Software Engineering Consultant}
+\location{October 2021 - September 2023}
+
+
+
+    {\small
+        \emph{Technologies:}
+        \begin{itemize*}
+    
+        \item \emph{C\#}
+    
+        \item \emph{Typescript}
+    
+        \item \emph{.NETCore}
+    
+        \item \emph{Angular}
+    
+        \item \emph{React}
+    
+        \item \emph{SQL}
+    
+        \item \emph{Postgres}
+    
+        \item \emph{Twilio}
+    
+        \item \emph{Kubernetes}
+    
+        \item \emph{Docker}
+    
+        \item \emph{Google Cloud}
+    
+        \item \emph{Azure}
+    
+    \end{itemize*}
+
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+    \item Added a docker image to include unit testing in the client company's Azure Devops pipeline.
+
+    \item Implemented screensharing, virtual backgrounds, a new layout, participant information, email sending, and a multi-step scheduling form and live quality monitoring in client's telemedicine platform via Twilio
+
+    \item Defined a SQL View to collate information regarding interpreters for administration of client's telemedicine platform
+
+    \item Implemented password reset API for mobile client apps to integrate with each other for client's telemedicine platform
+
+    \item Created an ETL process to integrate a client's transportation events into a proprietary database structure
+
+\end{tightemize}
+\sectionsep
+
+
+\runsubsection{Relativity} \\
+\descript{Advanced Software Engineer}
+\location{March 2020 - October 2021}
+
+
+
+    {\small
+        \emph{Technologies:}
+        \begin{itemize*}
+    
+        \item \emph{C\#}
+    
+        \item \emph{C++/CLI}
+    
+        \item \emph{MS-SQL}
+    
+        \item \emph{Powershell}
+    
+        \item \emph{Jenkins}
+    
+        \item \emph{Python}
+    
+        \item \emph{Azure}
+    
+        \item \emph{.NET}
+    
+        \item \emph{.NETCore}
+    
+        \item \emph{Groovy}
+    
+    \end{itemize*}
+
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+    \item Implemented Tenant-wide resource locking for Load jobs.
+
+    \item Implemented Locale retrieval and configuration on Azure VM on tenant assignment.
+
+    \item Integrated Azure Event Hub into multi-tenant worker code to produce events on job completion.
+
+    \item Decoupling custom metadata binding APIs from worker logic and making them tenant-agnostic.
+
+    \item Moved infrastructure components into shared libraries and refactoring to use Azure Key Vault for secret management.
+
+\end{tightemize}
+\sectionsep
+
+
+\runsubsection{Relativity} \\
+\descript{Software Engineer}
+\location{August 2018 - March 2020}
+
+
+
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+    \item Implemented the ability to remove documents from review, and re-calculate de-duplication for affected data sources.
+
+    \item Designed, delivered, and Implemented a feature that enables clients to re-run the ETL pipeline. This allows them to process documents with updated settings, allowing for the extraction of new metadata, and easing a common client pain point.
+
+    \item Updated the functional test framework to be environment-aware: testing environments now clean up debug-resources that could cause noisy neighbor issues and/or potentially prevent full/accurate coverage of the codebase.
+
+    \item Eliminated duplicate code paths, in the functional tests covering the Load step, by a factor of 4.
+
+    \item Reduced flaky tests caused by noisy neighbor issues by implementing phases for functional test jobs.
+
+    \item Increased transparency into the processing engine by allowing users to see all of the files run through the engine. Furthermore, in order to allow clients to more easily visualize the data coming back, grouping, and pivoting on properties was introduced.
+
+    \item Enabled greater ease of disaster recovery by moving various automation assets into source code management. Furthermore, I consolidated the seeding and DSL logic into generic, config driven pipelines. Previously, developers would modify the configuration of 4 jobs on the Jenkins server's UI whereas following my changes.
+
+\end{tightemize}
+\sectionsep
+
+
+
+% \begin{center}
+% ~Experience continued on Page 2~
+% \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Organizations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \noindent\rule{\textwidth}{1pt}
+% \section{Organizations}
+% 
+% \runsubsection{DePaul Computer Science Society} \\
+% \location{2017-2018 | Vice President}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+% \begin{tightemize}
+% 
+%     \item Planned and ran the DemonHacks Hackathon in its inaugural year
+% 
+%     \item Organized, Planned, and ran meetings in addition to; coordinating company visits
+% 
+% \end{tightemize}
+% \sectionsep
+% 
+
+\end{minipage}
+\sectionsep
+\sectionsep
+\sectionsep
+\begin{page}
+
+\sectionsep
+% \section{Experience}
+% 
+% \begin{flushleft}
+% \runsubsection{Relativity } \\
+% \end{flushleft}
+% \descript{Software Engineer}
+% \location{August 2018 - March 2020}
+% 
+%
+% 
+%
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+% \begin{tightemize}
+% 
+%     \item Implemented the ability to remove documents from review, and re-calculate de-duplication for affected data sources.
+% 
+%     \item Designed, delivered, and Implemented a feature that enables clients to re-run the ETL pipeline. This allows them to process documents with updated settings, allowing for the extraction of new metadata, and easing a common client pain point.
+% 
+%     \item Updated the functional test framework to be environment-aware: testing environments now clean up debug-resources that could cause noisy neighbor issues and/or potentially prevent full/accurate coverage of the codebase.
+% 
+%     \item Eliminated duplicate code paths, in the functional tests covering the Load step, by a factor of 4.
+% 
+%     \item Reduced flaky tests caused by noisy neighbor issues by implementing phases for functional test jobs.
+% 
+%     \item Increased transparency into the processing engine by allowing users to see all of the files run through the engine. Furthermore, in order to allow clients to more easily visualize the data coming back, grouping, and pivoting on properties was introduced.
+% 
+%     \item Enabled greater ease of disaster recovery by moving various automation assets into source code management. Furthermore, I consolidated the seeding and DSL logic into generic, config driven pipelines. Previously, developers would modify the configuration of 4 jobs on the Jenkins server's UI whereas following my changes.
+% 
+% \end{tightemize}
+% \sectionsep
+% 
+% 
+
+\end{page}
+\end{document} \documentclass[]{article}
